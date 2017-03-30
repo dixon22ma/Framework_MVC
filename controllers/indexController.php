@@ -8,7 +8,7 @@ class IndexController extends Controller {
     }
     public function index() {
         $this->_view->title = 'Portada';
-        $this->_view->render('index'); 
+        $this->_view->render('index', 'index'); 
     }
 
 }

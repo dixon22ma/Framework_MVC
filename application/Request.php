@@ -16,12 +16,15 @@ class Request {
             $url = explode('/', $url);
             //  Delete args not valid in array
             $url = array_filter($url);
+            echo $url;
         }
         //  Initialice 
         //  Extraer el primer elemento de la url
-        $this->_controller = strtolower(array_shift($url));
-        $this->_model = strtolower(array_shift($url));
-        $this->_args = $url;
+        if(isset($url)) {
+            $this->_controller = strtolower(array_shift($url));
+            $this->_model = strtolower(array_shift($url));
+            $this->_args = $url;
+        }
         
         if(!$this->_controller ) {
             $this->_controller = DEFAULT_CONTROLLER;
